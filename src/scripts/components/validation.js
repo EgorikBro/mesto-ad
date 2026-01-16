@@ -148,12 +148,7 @@ export const enableValidation = (settings) => {
   
   formList.forEach((formElement) => {
     setEventListeners(formElement, settings);
-    
-    // Отключаем кнопку при первой загрузке
-    const submitButton = formElement.querySelector(settings.submitButtonSelector);
-    if (submitButton) {
-      disableSubmitButton(submitButton, settings);
-    }
+    toggleButtonState(formElement, settings);
   });
 };
 
